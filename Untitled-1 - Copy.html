@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Farel Okta Ananta</title>
+
+    <style>
+        /* =========== GLOBAL =========== */
+        * {
+            box-sizing: border-box;
+            transition: 0.25s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8f1ff;
+            margin: 0;
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========== NAVIGATION =========== */
+        nav {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #a5c8ff;
+        }
+
+        nav a.active {
+            border-bottom: 3px solid #fff;
+        }
+
+        /* =========== SECTION STYLE =========== */
+        section {
+            display: none;
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========== BERANDA BANNER =========== */
+        .beranda-banner-container {
+            width: 100%;
+            min-height: 320px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        .beranda-banner-content {
+            width: 90%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            gap: 20px;
+        }
+
+        .beranda-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        .beranda-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .beranda-buttons a {
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .btn {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn:hover {
+            background: #dce7ff;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* FOTO */
+        .beranda-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+        }
+
+        /* INTRO */
+        .beranda-intro {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .intro-icon {
+            font-size: 2.5rem;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* ARTIKEL */
+        .artikel-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 6px solid #2563eb;
+            border-radius: 12px;
+            background: #f8fbff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* PROFIL */
+        .profil-card {
+            background: #f8fbff;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 15px;
+            border-left: 6px solid #2563eb;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            width: 22px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* ========== MEDIA QUERY RESPONSIF ========== */
+        @media (max-width: 900px) {
+            nav a {
+                margin: 0 12px;
+                font-size: 0.9rem;
+            }
+
+            .beranda-banner-content {
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .beranda-text h1 {
+                font-size: 2rem;
+            }
+
+            .beranda-text p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px;
+                font-size: 0.85rem;
+            }
+
+            section {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .beranda-banner-container {
+                min-height: 280px;
+            }
+
+            .beranda-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .beranda-buttons a {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+
+            .beranda-foto {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .beranda-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .beranda-text p {
+                font-size: 0.9rem;
+            }
+
+            .beranda-foto {
+                width: 110px;
+                height: 110px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showPage('beranda')" id="nav-beranda">BERANDA</a>
+        <a onclick="showPage('artikel')" id="nav-artikel">ARTIKEL</a>
+        <a onclick="showPage('profil')" id="nav-profil">PROFIL</a>
+    </nav>
+
+    <!-- ================= BERANDA ================= -->
+    <section id="beranda">
+        <div class="beranda-banner-container">
+            <div class="beranda-banner-content">
+                <div class="beranda-text">
+                    <h1>Halo, Saya Farel Okta Ananta</h1>
+                    <p>Pelajar SMKN 2 Pengasih | Tertarik pada Teknologi, Pemrograman, dan Desain UI/UX</p>
+
+                    <div class="beranda-buttons">
+                        <a onclick="showPage('profil')" class="btn">Lihat Profil</a>
+                        <a onclick="showPage('artikel')" class="btn btn-secondary">Artikel Saya</a>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="foto.jpg" class="beranda-foto" alt="foto">
+                </div>
+            </div>
+        </div>
+
+        <div class="beranda-intro">
+            <div class="intro-icon">✨</div>
+            <h2>Selamat Datang di Portofolio Saya!</h2>
+            <p>Ini adalah tempat di mana saya membagikan perjalanan saya dalam dunia teknologi, pemrograman, dan desain.</p>
+        </div>
+    </section>
+
+    <!-- ================= ARTIKEL ================= -->
+    <section id="artikel">
+        <h2>Artikel</h2>
+
+        <div class="artikel-item">
+            <h3>Belajar HTML Dasar</h3>
+            <p>Pengenalan HTML untuk pemula.</p>
+        </div>
+
+        <div class="artikel-item">
+            <h3>Pengenalan CSS</h3>
+            <p>Cara dasar memperindah tampilan website dengan CSS.</p>
+        </div>
+
+        <div class="artikel-item">
+            <h3>Pentingnya UI/UX</h3>
+            <p>Mengapa kenyamanan pengguna sangat penting dalam aplikasi.</p>
+        </div>
+    </section>
+
+    <!-- ================= PROFIL ================= -->
+    <section id="profil">
+        <h2>Profil</h2>
+
+        <div style="
+            width: 100%;
+            padding: 35px 0;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            border-radius: 18px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        ">
+            <img src="foto.jpg" class="beranda-foto" style="width:170px; height:170px;" alt="foto">
+
+            <h3 style="margin-top:18px; font-size:1.6rem;">Farel Okta Ananta</h3>
+            <p style="opacity:0.9;">Pelajar | Programmer | UI/UX Enthusiast</p>
+        </div>
+
+        <div class="profil-card">
+            <h3>Data Diri</h3>
+            <p><strong>Nama:</strong> Farel Okta Ananta</p>
+            <p><strong>Sekolah:</strong> SMKN 2 Pengasih</p>
+            <p><strong>Jurusan:</strong> Rekayasa Perangkat Lunak</p>
+        </div>
+
+        <div class="profil-card">
+            <h3>Keahlian</h3>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>Dasar JavaScript</li>
+                <li>Desain UI/UX</li>
+                <li>Editing gambar dasar</li>
+            </ul>
+        </div>
+
+        <div class="profil-card">
+            <h3>Kontak</h3>
+            <p><img class="icon" src="https://cdn-icons-png.flaticon.com/512/561/561188.png"> farel@example.com</p>
+            <p><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> @farel.okta</p>
+        </div>
+    </section>
+
+    <script>
+        function showPage(page) {
+            document.querySelectorAll("section").forEach(s => s.style.display = "none");
+            document.getElementById(page).style.display = "block";
+
+            document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+            document.getElementById("nav-" + page).classList.add("active");
+        }
+        showPage("beranda");
+    </script>
+
+</body>
+</html>
